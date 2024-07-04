@@ -209,8 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 moveDown();
                 break;
 
-            case 'r':
-            case 'R':
+            case 'ArrowUp':
                 despawnTile();
                 rotate();
                 drawGrid();
