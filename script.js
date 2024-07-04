@@ -10,14 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('myCanvas');
     const  ctx = canvas.getContext('2d');
     let audio = document.getElementById('myAudio');
-    audio.play();
+    //audio.play();
+    let activa_musica = true;
 
-
-    audio.addEventListener('ended', function() {
-        // Reinicia la reproducción desde el principio
-        audio.currentTime = 0;
-        audio.play();
-    });
+    
     document.addEventListener('keydown', handleKeyPress);
     let color = 'blue';
     const gridSize = 50;  // Tamaño de cada cuadrado
@@ -41,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCanvas();
 
     function start(){
+        if(activa_musica)
+            spawnTile(random);
+        activa_musica = false;
+        clearInterval(interval);
         interval = setInterval(moveDown, time_interval);
         audio.play();
     }
@@ -449,12 +449,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    
-    spawnTile(random);
+    if(!activa_musica){
+        spawnTile(random);
+    }
 
     drawGrid();
     
-    start();
+    //start();
 
 });
 
