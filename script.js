@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     [0, 1, 0],
                     [0, 1, 0]
                 ];
-                color = 'blue';
+                color = 'pink';
                 break;
         }
 
