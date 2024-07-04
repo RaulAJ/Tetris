@@ -141,17 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 4: 
                 tile.map = [
-                    [0, 0, 0],
                     [0, 1, 1],
-                    [1, 1, 0]
+                    [1, 1, 0],
+                    [0, 0, 0]
                 ];
                 color = 'yellow';
                 break;
             case 5:
                 tile.map = [
-                    [0, 0, 0],
                     [1, 1, 0],
-                    [0, 1, 1]
+                    [0, 1, 1],
+                    [0, 0, 0]
                 ];
                 color = 'green';
                 break;
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     [0, 1, 0],
                     [0, 1, 0]
                 ];
-                color = 'pink';
+                color = 'grey';
                 break;
         }
 
