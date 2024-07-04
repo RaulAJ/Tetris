@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let tile = null;
     let lineas_rotas = 0;
     let random = 1;
-    let time_interval = 500;
+    let time_interval = 900;
     let interval = null;
 
     function initializeCanvas(){
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
     function spawnTile(){
-        random = getRandomInt(1, 5);
+        random = getRandomInt(0, 7);
         tile = {row: 0, col: 2, size: 3, 
             map: [
             [0, 0, 0],
@@ -106,6 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
             [1, 1, 1]
         ]};
         switch (random){
+            case 0:
+                tile.map = [
+                    [1, 1, 0],
+                    [1, 1, 0],
+                    [0, 0, 0]
+                ];
+                color = 'purple';
+                break;
             case 1:
                 tile.map = [
                     [1, 1, 1],
@@ -138,7 +146,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     [1, 1, 0]
                 ];
                 color = 'yellow';
-            break;
+                break;
+            case 5:
+                tile.map = [
+                    [0, 0, 0],
+                    [1, 1, 0],
+                    [0, 1, 1]
+                ];
+                color = 'green';
+                break;
+            case 6:
+                tile.map = [
+                    [0, 1, 1],
+                    [0, 1, 0],
+                    [0, 1, 0]
+                ];
+                color = 'blue';
+                break;
         }
 
         let derrota = false;
